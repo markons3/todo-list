@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
+require("dotenv").config();
 
 module.exports = async () => {
     try {
-        await mongoose.connect(`mongodb+srv://admin:marecare1991@cluster0.ziahc.mongodb.net/todoappDB?retryWrites=true&w=majority`);
+        await mongoose.connect(process.env.MONGO_DB_URI);
 
         console.log('Connected to the mongoDB!');
 
